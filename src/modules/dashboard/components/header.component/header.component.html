@@ -1,3 +1,8 @@
-<div>
+<header>
+    <a>FMP</a>
     <p>Financial Modeling Prep</p>
-</div>
+    <div class="date">
+        <p>{{ currentTime | date: 'HH:mm:ss' }}</p>
+        <p>{{ todayDate | date: 'dd.M.y.' }}</p>
+    </div>
+</header>

@@ -1,0 +1,26 @@
+@import '../../../../assets/custom-styling/variables.scss';
+
+nav {
+    background-color: $sidebar-color;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: fixed;
+    top: 100px;
+    width: 200px;
+
+    span {
+        align-items: center;
+        display: flex;
+
+        &:hover {
+            background-color: $primary-color;
+            color: $white-color;
+            cursor: pointer;
+        }
+
+        a {
+            padding: 10px 15px;
+        }
+    }
+}
