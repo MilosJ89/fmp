@@ -1,3 +1,9 @@
+/**
+ * Sidebar component
+ * Component for navigation in application
+ *
+ * @author Milos Jovanovic
+ */
 import { Component } from '@angular/core';
 
 @Component({
