@@ -13,7 +13,7 @@ export class MajorIndexesComponent implements OnInit {
 
     public ngOnInit() {
         this.apiService.getMajorIndexes().subscribe(index => {
-            this.majorIndexes = index;
+            this.majorIndexes = index.majorIndexesList;
             console.log(this.majorIndexes);
         });
     }

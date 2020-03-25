@@ -1,0 +1,54 @@
+@import '../../assets/custom-styling/variables.scss';
+
+@keyframes ticker {
+    0% {
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+    
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+.majorIndexes {
+    background-color: $white-color;
+    border-bottom: 1px solid $secondary-color;
+    box-sizing: content-box;
+    height: 50px;
+    overflow: hidden;
+    padding-left: 100%;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    z-index: 5;
+
+    &List {
+        // color: $secondary-color;
+        align-items: center;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-name: ticker;
+        animation-duration: 50s;
+        box-sizing: content-box;
+        display: flex;
+        height: 50px; 
+        padding-right: 100%;
+        white-space: nowrap; 
+        width: 100%;
+
+        &Item {
+            color: black; 
+            display: inline-block;
+            margin: 10px;
+        }
+    }
+}
+
+.red {
+    color: $red-color;
+}
+
+.green {
+    color: $secondary-color;
+}

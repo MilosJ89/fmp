@@ -1,0 +1,7 @@
+<div class="majorIndexes">
+    <div class="majorIndexesList">
+        <div *ngFor='let index of majorIndexes' class='majorIndexesListItem' [ngClass]="{'green': index.changes>0, 'red': index.changes<0}">
+            {{ index.indexName }} {{ index.changes | number: '1.1-2' }}
+        </div>
+    </div>
+</div>
