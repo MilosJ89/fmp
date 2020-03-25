@@ -5,27 +5,29 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Components
-import { HeaderComponent } from '../components/header-component/header.component';
-import { SidebarComponent } from 'src/components/sidebar-component/sidebar.component';
-import { MajorIndexesComponent } from 'src/components/majorIndexes-component/majorIndexes.component';
+import { HeaderComponent } from '../components/header/header.component';
+import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
+import { MajorIndexesComponent } from 'src/components/majorIndexes/majorIndexes.component';
+import { CompaniesPage } from 'src/pages/companies/companies.page';
 
 // Modules
-import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { ApiService } from 'src/services/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TableModule } from 'src/modules/table/table.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    MajorIndexesComponent
+    MajorIndexesComponent,
+    CompaniesPage
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DashboardModule,
-    HttpClientModule
+    HttpClientModule,
+    TableModule
   ],
   providers: [
     ApiService
