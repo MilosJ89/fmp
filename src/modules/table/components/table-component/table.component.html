@@ -6,7 +6,8 @@
     </div>
     <div class="tableBody">
         <div *ngFor='let item of items' class="tableBodyItem">
-            <div *ngFor='let field of fields' class="tableBodyItemsCell">
+            <div *ngFor='let field of fields' class="tableBodyItemsCell" #cell>
+                <img *ngIf="field.field==='image'" src={{item[field.field]}}>
                 {{ item[field.field] }}
             </div>
         </div>

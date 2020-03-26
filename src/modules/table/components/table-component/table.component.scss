@@ -19,4 +19,11 @@
             padding: 10px;
         }
     }
+
+    &Body {
+
+        &Item {
+            display: flex;
+        }
+    }
 }
