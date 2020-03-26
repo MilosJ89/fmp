@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
-    @Input() public fields: string[];
+    @Input() public fields: any[];
     @Input() public items: any[];
 }

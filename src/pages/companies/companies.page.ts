@@ -15,10 +15,47 @@ import { ApiService } from '../../services/api.service';
 })
 // tslint:disable-next-line: component-class-suffix
 export class CompaniesPage implements OnInit {
-    public fieldsCompanies = ['Company', 'Price', 'Changes', 'Changes%', 'Website'];
+    public fieldsCompanies = [
+        {field: '.profile.image', title: ''},
+        {field: '.profile.companyName', title: 'Company'},
+        {field: '.profile.price', title: 'Price'},
+        {field: '.profile.changes', title: 'Changes'},
+        {field: '.profile.changesPercentage', title: 'Changes%'},
+        {field: '.profile.website', title: 'Website'}
+        ];
+
+    public symbols = [
+        'spy',
+        't',
+        'kmi',
+        'intc',
+        'mu',
+        'gdx',
+        'ge',
+        'seb',
+        'eem',
+        'ghc',
+        'aapl',
+        'msft',
+        'siri',
+        'hpq',
+        'cx',
+        'efa',
+        'amd',
+        'snap',
+        'fb',
+        'orcl'];
+    public companies = [];
 
     constructor(private apiService: ApiService) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        for (const symbol of this.symbols) {
+            this.apiService.getCompany(symbol).subscribe(company => {
+                this.companies.push(company);
+            });
+        }
+        console.log(this.companies);
+    }
 }
 

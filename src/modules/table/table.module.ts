@@ -9,6 +9,9 @@ import { TableComponent } from './components/table-component/table.component';
     imports: [
         BrowserModule
     ],
-    providers: []
+    providers: [],
+    exports: [
+        TableComponent
+    ]
 })
 export class TableModule { }
