@@ -12,5 +12,14 @@ import { Component } from '@angular/core';
     styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-
+    /**
+     * Array with name of tabs and links
+     */
+    public tabs: any[] = [
+        { tab: 'Home', link: 'home' },
+        { tab: 'Companies', link: 'companies' },
+        { tab: 'Crypto Currencies', link: 'cryptoCurrencies' },
+        { tab: 'Currencies', link: 'currencies' },
+        { tab: 'About', link: 'about' }
+    ];
 }

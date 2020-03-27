@@ -19,8 +19,8 @@ nav {
             cursor: pointer;
         }
 
-        a {
-            color: $black-color;
+        .tab {
+            color: $primary-color;
             padding: 10px 15px;
             text-decoration: none;
             width: 100%;
@@ -28,6 +28,11 @@ nav {
             &:hover {
                 color: $white-color;
             }
+        }
+
+        .active {
+            background-color: $secondary-color;
+            color: $white-color !important;
         }
     }
 }

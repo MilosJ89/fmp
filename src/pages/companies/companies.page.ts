@@ -7,7 +7,6 @@
 import { Component, OnInit, Renderer2, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 import { ApiService } from '../../services/api.service';
-import { TableComponent } from 'src/modules/table/components/table-component/table.component';
 
 @Component({
     selector: 'app-companies-page',
@@ -15,8 +14,11 @@ import { TableComponent } from 'src/modules/table/components/table-component/tab
     styleUrls: ['./companies.page.scss']
 })
 export class CompaniesPage implements OnInit {
-    // @ViewChild('cell', {static: false}) cell: ElementRef;
+    @ViewChild('cell', {static: false}) cell: ElementRef;
 
+    /**
+     * Array for header of companies table with fileds and titles
+     */
     public fieldsCompanies = [
         {field: 'image', title: ''},
         {field: 'companyName', title: 'Company'},
@@ -26,7 +28,10 @@ export class CompaniesPage implements OnInit {
         {field: 'website', title: 'Website'}
         ];
 
-    public symbols = [
+    /**
+     * Array with symbols of companies which using for endpoint in url
+     */
+    public symbols: string[] = [
         'spy',
         't',
         'kmi',
@@ -47,22 +52,38 @@ export class CompaniesPage implements OnInit {
         'snap',
         'fb',
         'orcl'];
-    public companies = [];
+
+    /**
+     * Array for companies from api
+     */
+    public companies: any[] = [];
 
     constructor(
         private apiService: ApiService,
         private renderer2: Renderer2
         ) {}
 
+    // public organizeTable() {
+    //     this.companies.map((company) => {
+    //         return company.profile.changes.toFixed(2);
+    //     });
+    // }
 
+    /**
+     * Push array companies with objects of company informations
+     */
     public ngOnInit() {
         for (const symbol of this.symbols) {
-            this.apiService.getCompany(symbol).subscribe(company => {
-                this.companies.push(company.profile);
-            });
+            this.apiService.getCompany(symbol)
+                .subscribe(
+                    company => {
+                        this.companies.push(company.profile);
+                    },
+                    error => {
+                        console.log('error');
+                    }
+                );
         }
-
-        console.log(this.companies);
     }
 
 }

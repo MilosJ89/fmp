@@ -7,11 +7,12 @@ import { CurrenciesPage } from 'src/pages/currencies/currencies.page';
 import { AboutPage } from 'src/pages/about/about.page';
 
 const routes: Routes = [
-  { path: '', component: HomePage },
+  { path: 'home', component: HomePage },
   { path: 'companies', component: CompaniesPage },
   { path: 'cryptoCurrencies', component: CryptoCurrenciesPage },
   { path: 'currencies', component: CurrenciesPage },
-  { path: 'about', component: AboutPage }
+  { path: 'about', component: AboutPage },
+  { path: '', component: HomePage }
 ];
 
 @NgModule({

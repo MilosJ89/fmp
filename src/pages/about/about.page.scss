@@ -1,0 +1,18 @@
+@import '../../assets/custom-styling/variables.scss';
+
+div {
+    left: 50%;
+    position: absolute;
+    top: 120px;
+    transform: translate(-50%, 0);
+
+    h2 {
+        color: $secondary-color;
+        text-align: center;
+    }
+
+    p {
+        color: $primary-color;
+        text-align: center;
+    }
+}

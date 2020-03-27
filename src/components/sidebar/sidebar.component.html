@@ -1,17 +1,5 @@
 <nav>
-    <span>
-        <a routerLink='/'>Home</a>
-    </span>
-    <span>
-        <a routerLink='/companies'>Companies</a>
-    </span>
-    <span>
-        <a routerLink='/cryptoCurrencies'>Crypto Currencies</a>
-    </span>
-    <span>
-        <a routerLink='/currencies'>Currencies</a>
-    </span>
-    <span>
-        <a routerLink='/about'>About</a>
+    <span *ngFor='let tab of tabs'>
+        <a class="tab" [routerLink]="['/',tab.link]" routerLinkActive='active'>{{ tab.tab }}</a>
     </span>
 </nav>

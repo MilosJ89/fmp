@@ -12,7 +12,14 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    /**
+     * Variable for time
+     */
     public currentTime: any;
+
+    /**
+     * Variable for date
+     */
     public todayDate: any;
 
     /**

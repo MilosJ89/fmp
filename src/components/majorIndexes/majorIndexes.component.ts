@@ -7,13 +7,25 @@ import { ApiService } from '../../services/api.service';
     styleUrls: ['./majorIndexes.component.scss']
 })
 export class MajorIndexesComponent implements OnInit {
-    public majorIndexes = [];
+    /**
+     * Array with objects with major indexes from api
+     */
+    public majorIndexes: any[] = [];
 
     constructor(private apiService: ApiService) {}
 
+    /**
+     * Push major indexes in array majorIndexes
+     */
     public ngOnInit() {
-        this.apiService.getMajorIndexes().subscribe(index => {
-            this.majorIndexes = index.majorIndexesList;
-        });
+        this.apiService.getMajorIndexes()
+            .subscribe(
+                index => {
+                    this.majorIndexes = index.majorIndexesList;
+                },
+                error => {
+                    console.log('error');
+                }
+            );
     }
 }
