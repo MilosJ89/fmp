@@ -1,6 +1,7 @@
 @import '../../../../assets/custom-styling/variables.scss';
 
 .table {
+    background-color: $white-color;
     left: 50%;
     position: absolute;
     top: 170px;
@@ -21,9 +22,26 @@
     }
 
     &Body {
+        max-height: 70vh;
+        overflow-y: scroll;
 
         &Item {
+            align-items: center;
             display: flex;
+            padding: 5px 0;
+
+            &:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            &:hover {
+                background-color: $background-color;
+            }
+
+            img {
+                height: 24px;
+                width: 24px;
+            }
         }
     }
 }

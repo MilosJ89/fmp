@@ -14,7 +14,6 @@ import { TableComponent } from 'src/modules/table/components/table-component/tab
     templateUrl: './companies.page.html',
     styleUrls: ['./companies.page.scss']
 })
-// tslint:disable-next-line: component-class-suffix
 export class CompaniesPage implements OnInit {
     // @ViewChild('cell', {static: false}) cell: ElementRef;
 

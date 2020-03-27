@@ -8,7 +8,11 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
 import { MajorIndexesComponent } from 'src/components/majorIndexes/majorIndexes.component';
+import { HomePage } from 'src/pages/home/home.page';
 import { CompaniesPage } from 'src/pages/companies/companies.page';
+import { CryptoCurrenciesPage } from 'src/pages/cryptoCurrencies/cryptoCurrencies.page';
+import { CurrenciesPage } from 'src/pages/currencies/currencies.page';
+import { AboutPage } from 'src/pages/about/about.page';
 
 // Modules
 import { ApiService } from 'src/services/api.service';
@@ -21,7 +25,11 @@ import { TableModule } from 'src/modules/table/table.module';
     HeaderComponent,
     SidebarComponent,
     MajorIndexesComponent,
-    CompaniesPage
+    HomePage,
+    CompaniesPage,
+    CryptoCurrenciesPage,
+    CurrenciesPage,
+    AboutPage
   ],
   imports: [
     BrowserModule,
