@@ -72,7 +72,10 @@ export class CompaniesPage implements OnInit, AfterViewInit {
             this.apiService.getCompany(symbol)
                 .subscribe(
                     company => {
+                        company.profile.changesPercentage = company.profile.changesPercentage.replace(/[()]/g, '');
+                        company.profile.website = company.profile.website.replace('http://', '');
                         this.companies.push(company.profile);
+                        console.log(this.companies);
                     },
                     error => {
                         console.log('error');
@@ -95,7 +98,7 @@ export class CompaniesPage implements OnInit, AfterViewInit {
         // });
         // console.log(this.table);
         // this.renedere2.addClass(this.table.nativeElement, 'bg');
-        console.log(this.table.nativeElement);
+        // console.log(this.table.nativeElement);
     }
 }
 

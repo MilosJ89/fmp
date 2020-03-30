@@ -8,11 +8,12 @@
         <div *ngFor='let item of items' class="tableBodyItem">
             <div #cell
                 *ngFor='let field of fields' 
-                class="tableBodyItemsCell" 
+                class="tableBodyItemCell" 
                 [ngClass]="{'bold':field.field==='companyName'}"
             >
                 <img *ngIf="field.field==='image'" src={{item[field.field]}}>
-                {{ item[field.field] }}
+                <!-- <a *ngIf="field.field==='website'" href={{item[field.field]}} target="_blank">{{item[field.field]}}</a> -->
+                {{ field.field ==='image' ? '' : item[field.field] }}
             </div>
         </div>
     </div>
