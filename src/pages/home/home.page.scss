@@ -1,7 +1,9 @@
 @import '../../assets/custom-styling/variables.scss';
 
 div {
+    left: 200px;
     position: absolute;
+    right: 200px;
     top: 100px;
 
     img {
@@ -21,6 +23,6 @@ div {
         margin: 0 auto;
         padding: 10px;
         text-align: justify;
-        width: 40%;
+        width: 50%;
     }
 }

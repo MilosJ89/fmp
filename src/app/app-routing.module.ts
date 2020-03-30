@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+// Pages
 import { CompaniesPage } from 'src/pages/companies/companies.page';
 import { HomePage } from 'src/pages/home/home.page';
 import { CryptoCurrenciesPage } from 'src/pages/cryptoCurrencies/cryptoCurrencies.page';

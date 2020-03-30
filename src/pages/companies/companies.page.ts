@@ -4,7 +4,7 @@
  *
  * @author Milos Jovanovic
  */
-import { Component, OnInit, Renderer2, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
 
 import { ApiService } from '../../services/api.service';
 
@@ -13,15 +13,15 @@ import { ApiService } from '../../services/api.service';
     templateUrl: './companies.page.html',
     styleUrls: ['./companies.page.scss']
 })
-export class CompaniesPage implements OnInit {
-    @ViewChild('cell', {static: false}) cell: ElementRef;
+export class CompaniesPage implements OnInit, AfterViewInit {
+    // @ViewChild('table', {static: false}) table: ElementRef[];
 
     /**
      * Array for header of companies table with fileds and titles
      */
     public fieldsCompanies = [
         {field: 'image', title: ''},
-        {field: 'companyName', title: 'Company'},
+        {field: 'companyName', title: 'Company', class: 'bold'},
         {field: 'price', title: 'Price'},
         {field: 'changes', title: 'Changes'},
         {field: 'changesPercentage', title: 'Changes%'},
@@ -60,14 +60,9 @@ export class CompaniesPage implements OnInit {
 
     constructor(
         private apiService: ApiService,
-        private renderer2: Renderer2
+        private reneder2: Renderer2,
+        private table: ElementRef
         ) {}
-
-    // public organizeTable() {
-    //     this.companies.map((company) => {
-    //         return company.profile.changes.toFixed(2);
-    //     });
-    // }
 
     /**
      * Push array companies with objects of company informations
@@ -84,7 +79,23 @@ export class CompaniesPage implements OnInit {
                     }
                 );
         }
+        // this.test();
     }
 
+    // public clearBrackets() {
+    //     this.companies.map(company => {
+    //         company.changesPercentage.replace(/[()]/g, '');
+    //     });
+    // }
+
+    public ngAfterViewInit() {
+        // this.table.items.map(company => {
+        //     company.changesPercentage.replace(/[()]/g, '');
+        //     console.log(company.changesPercentage);
+        // });
+        // console.log(this.table);
+        // this.renedere2.addClass(this.table.nativeElement, 'bg');
+        console.log(this.table.nativeElement);
+    }
 }
 
