@@ -1,10 +1,11 @@
 /**
  * Companies page
+ *
  * Display information of companies
  *
  * @author Milos Jovanovic
  */
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 
 import { ApiService } from '../../services/api.service';
 
@@ -13,11 +14,11 @@ import { ApiService } from '../../services/api.service';
     templateUrl: './companies.page.html',
     styleUrls: ['./companies.page.scss']
 })
-export class CompaniesPage implements OnInit, AfterViewInit {
+export class CompaniesPage implements OnInit {
     // @ViewChild('table', {static: false}) table: ElementRef[];
 
     /**
-     * Array for header of companies table with fileds and titles
+     * Header of companies table with fileds and titles
      */
     public fieldsCompanies = [
         {field: 'image', title: ''},
@@ -29,7 +30,7 @@ export class CompaniesPage implements OnInit, AfterViewInit {
         ];
 
     /**
-     * Array with symbols of companies which using for endpoint in url
+     * Symbols of companies which using for endpoint in url
      */
     public symbols: string[] = [
         'spy',
@@ -54,7 +55,7 @@ export class CompaniesPage implements OnInit, AfterViewInit {
         'orcl'];
 
     /**
-     * Array for companies from api
+     * Companies from api
      */
     public companies: any[] = [];
 
@@ -65,7 +66,8 @@ export class CompaniesPage implements OnInit, AfterViewInit {
         ) {}
 
     /**
-     * Push array companies with objects of company informations
+     * Angular life cycle hook
+     * Initialize companies
      */
     public ngOnInit() {
         for (const symbol of this.symbols) {
@@ -82,23 +84,6 @@ export class CompaniesPage implements OnInit, AfterViewInit {
                     }
                 );
         }
-        // this.test();
-    }
-
-    // public clearBrackets() {
-    //     this.companies.map(company => {
-    //         company.changesPercentage.replace(/[()]/g, '');
-    //     });
-    // }
-
-    public ngAfterViewInit() {
-        // this.table.items.map(company => {
-        //     company.changesPercentage.replace(/[()]/g, '');
-        //     console.log(company.changesPercentage);
-        // });
-        // console.log(this.table);
-        // this.renedere2.addClass(this.table.nativeElement, 'bg');
-        // console.log(this.table.nativeElement);
     }
 }
 

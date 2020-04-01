@@ -1,3 +1,10 @@
+/**
+ * About page
+ *
+ * Display information of application
+ *
+ * @author Milos Jovanovic
+ */
 import { Component } from '@angular/core';
 
 @Component({

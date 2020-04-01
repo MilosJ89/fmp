@@ -1,5 +1,6 @@
 /**
  * Header component
+ *
  * Display header at application
  *
  * @author Milos Jovanovic
@@ -13,17 +14,17 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
     /**
-     * Variable for time
+     * Show time
      */
     public currentTime: any;
 
     /**
-     * Variable for date
+     * Show date
      */
     public todayDate: any;
 
     /**
-     * Function for time and date
+     * Initialize time and date
      */
     public ngOnInit() {
         this.currentTime = setInterval(() => {
@@ -34,7 +35,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Function for clear interval from memory
+     * Clear interval from memory
      */
     public ngOnDestroy() {
         if (this.currentTime) {

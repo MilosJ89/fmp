@@ -1,3 +1,10 @@
+/**
+ * Table componnet
+ *
+ * This component create table for input datas from api
+ *
+ * @author Milos Jovanovic
+ */
 import { Component, Input, ViewChild } from '@angular/core';
 
 @Component({

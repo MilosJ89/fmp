@@ -1,3 +1,10 @@
+/**
+ * Home Page
+ *
+ * Show page when open application
+ *
+ * @author Milos Jovanovic
+ */
 import { Component } from '@angular/core';
 
 @Component({

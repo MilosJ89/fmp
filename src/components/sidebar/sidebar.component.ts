@@ -1,5 +1,6 @@
 /**
  * Sidebar component
+ *
  * Component for navigation in application
  *
  * @author Milos Jovanovic
@@ -13,7 +14,7 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
     /**
-     * Array with name of tabs and links
+     * Name of tabs and links
      */
     public tabs: any[] = [
         { tab: 'Home', link: 'home' },

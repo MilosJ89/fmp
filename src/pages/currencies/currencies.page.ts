@@ -1,3 +1,10 @@
+/**
+ * Currencies Page
+ *
+ * Dsiplay information for currencies
+ *
+ * @author Milos Jovanovic
+ */
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/services/api.service';
 
@@ -8,17 +15,17 @@ import { ApiService } from 'src/services/api.service';
 })
 export class CurrenciesPage implements OnInit {
     /**
-     * Array abbreviation of currencies
+     * Abbreviation of currencies
      */
     public symbols: string[] = ['EUR', 'USD', 'JPY', 'GBP', 'CHF', 'CAD', 'AUD', 'RUB', 'CNY', 'SEK', 'AED', 'INR', 'EGP', 'NOK'];
 
     /**
-     * Array of object with currencies
+     * Currencies
      */
     public currencies: any[];
 
     /**
-     * Array for header of companies table with fileds and titles
+     * Header of companies table with fileds and titles
      */
     public fieldCurrencies = [
         {field: 'country', title: 'Country'},
@@ -29,7 +36,8 @@ export class CurrenciesPage implements OnInit {
     constructor(private apiService: ApiService) {}
 
     /**
-     *
+     * Angular life cycle hook
+     * Initialize currencies
      */
     public ngOnInit() {
         for (const symbol of this.symbols) {

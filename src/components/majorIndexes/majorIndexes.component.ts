@@ -1,3 +1,8 @@
+/**
+ * Major Indexes component
+ *
+ * Show major indexes and theirs values at ticker below header
+ */
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
@@ -8,14 +13,15 @@ import { ApiService } from '../../services/api.service';
 })
 export class MajorIndexesComponent implements OnInit {
     /**
-     * Array with objects with major indexes from api
+     * Major indexes from api
      */
     public majorIndexes: any[] = [];
 
     constructor(private apiService: ApiService) {}
 
     /**
-     * Push major indexes in array majorIndexes
+     * Angular life cycle hook
+     * Initializes major indexes
      */
     public ngOnInit() {
         this.apiService.getMajorIndexes()

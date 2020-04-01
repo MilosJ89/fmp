@@ -1,3 +1,10 @@
+/**
+ * Crypto Currencies Page
+ *
+ * Display information of crypto currencies
+ *
+ * @author Milos Jovanovic
+ */
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/services/api.service';
 
@@ -21,7 +28,8 @@ export class CryptoCurrenciesPage implements OnInit {
     constructor(private apiService: ApiService) {}
 
     /**
-     * Push array cryptoCurrencies with objects of crypto currencies informations
+     * Angular life cycle hook
+     * Initialzie crypto currencies
      */
     public ngOnInit() {
         this.apiService.getCryptoCurrencies()
